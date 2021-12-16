@@ -1,0 +1,164 @@
+* {
+    font-family: cursive;
+    color: rgb(77, 35, 5);
+    background-color: #FFDAB9;
+   
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    margin-left: 460px;  
+    font-size: 1cm;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.div1{
+    
+    float: center;
+    border: 3px white; 
+    
+  
+}
+
+.div3{
+  
+    align-content: center;
+    margin-left: 600px;  
+}
+
+.div4{
+    align-content: center;
+    margin-left: 600px;  
+}
+
+.div5{
+    align-content: center;
+    margin-left: 600px;  
+}
+
+body{
+    background-color: #FFDAB9;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+   
+}
+button{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: rgb(223, 11, 82);
+    border-radius: 10px;
+}
+
+
+.divx{
+    margin: 20px;
+    background-color: whitesmoke;
+    align-content: center;
+    
+}
+
+
+.div7{
+    margin-left: 650px;
+    
+}
+
+#azuriraj{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#ukloni{
+    margin-left: 15px;
+    margin-top: 20px;  
+}
+
+
+
+#uredi{
+    margin-top: 20px;  
+    margin-left: 5px;
+}
+
+#prijavise{
+    margin-left: 75px;
+}
+
+#vidi{
+    margin-left: 15px;
+}
+#nadji{
+    margin-left: 35px;
+}
+
+.prijava-form form{
+    padding: 3%;
+} 
+
+
+.prijava-form form .row{
+    margin-bottom: -7%;
+}
+
+
+ .prijava-form h3{
+    margin-bottom: 8%;
+    margin-top: -5%;
+    text-align: center;
+   
+} 
+
+
+div.modal-content {
+    background-image: url("../img/slika.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+}
+
+
+#azurirajModal{
+   
+    margin-left: 510px;
+    margin-top: 180px;
+   width: 450px;
+   height: 413px;
+   
+}
+
+#volontirajModal{
+    margin-left: 490px;
+    margin-top: 240px;
+   width: 500px;
+   height: 333px;
+
+}
+.div{
+    height: 70px;
+   
+}  
+
+#table{
+    border-style: double;
+    border-radius: 15px;
+    border-color:rgb(223, 11, 82) ;
+    text-align: center;
+    
+
+}
+tr
+table,tr,td{
+    background-color: white;
+}
+table,tr,th{
+   
+background-color: white;
+text-align: center;
+}
+.oznaci{
+background-color: white;
+}

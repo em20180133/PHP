@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="dizajn/pocetna.css">
     <title>Zakazivanje koncerata</title>
 
 </head>
@@ -13,46 +13,46 @@
 <body>
 
 
-<div class="div1" ><h1>Stranica za zakazivanje koncerata</h1></div> 
+<div class="div1" ><h1>Stranica za zakazivanje koncerata</h1></div> <br><br><br>
 
-<div class="diva2" >
+<div class="diva2"  >
     <div class="div3">
         <button id="vidi"  class="btn_vidi" 
         s> Pregledaj zakazane koncerte</button>
-    </div>
+    </div><br>
     <div class="div4">
         <button id="prijavise" type="button" class="btn_prijavise"
-                > Volontiraj</button>
+        data-toggle="modal" data-target="#volontirajModal"  > Volontiraj</button>
 
-    </div>
+    </div><br>
     <div class="div5"> 
         <button id="nadji" class="btn_nadji"
                 > Pronađi željeni koncert</button>
         <input type="text" id="ulaz" onkeyup="nadji()" placeholder="Pronadji traženi koncert po datumu" hidden>
-    </div>
+    </div><br>
 </div>
 
-<div  class="div5" >
+<div  class="divx" >
 
-    <div class="div6">
-        <table id="table" class="tabela_koncerata" style=" background-color: lightblue;" >
+    <div class="div6" >
+        <table id="table" class="tabela_koncerata" border="3" style=" background-color: white">
             <thead class ="zaglavlje">
             <tr >
-                <th scope="kolona">Izvođač</th>
-                <th scope="kolona">Datum</th>    
-                <th scope="kolona">Mesto</th>
-                <th scope="kolona">Volonter: </th>
+                <th scope="kolona" style="background-color:white " >Izvođač</th>
+                <th scope="kolona" style="background-color:white " >Datum</th>    
+                <th scope="kolona" style="background-color:white " >Mesto</th>
+                <th scope="kolona" style="background-color:white  " >Volonter </th>
             </tr>
             </thead>
             <tbody>
             
-                <tr>
+                <tr >
                     <td><?php echo $red["izvodjac"] ?></td>
                     <td><?php echo $red["datum"] ?></td>
                     <td><?php echo $red["mesto"] ?></td>
                     
                     <td><?php echo $red["idVolonter"] ?></td>
-                    <td>
+                    <td >
                         <label class="oznaci">
                             <input type="radio" name="checked-donut" value=<?php echo $red["idPrijava"] ?>>
                             <span class="check"></span>
@@ -65,8 +65,8 @@
         </table>
         <div class="div7" >
             <div class="div8" >
-                <button id="azuriraj" class="btn_azuriraj" data-toggle="modal" data-target="#azurirajModal">AŽURIRAJ</button>
-
+                <button id="azuriraj" type="button" class="btn_azuriraj" data-toggle="modal" data-target="#azurirajModal">AŽURIRAJ</button>
+                
             </div>
 
             <div class="div9" >
@@ -82,11 +82,12 @@
 </div>
 
 
-<div class="div11"  role="dialog" >
-    <div class="div12">
+
+<div class="modal" id="volontirajModal"  role="dialog"  style=" background-color:#FFDAB9">
+    <div class="div12" style=" background-color:#FFDAB9">
 
         
-        <div class="div13" >
+        <div class="modal-content" style=" background-color:#FFDAB9">
             <div class="div14">
                 <button type="button" class="zatvori" data-dismiss="modal">&times;</button>
             </div>
@@ -94,27 +95,27 @@
                 <div class="fprijava">
                     <form action="#" method="post" id="dodajFormu">
                         <h3  >Volontiraj</h3>
-                        <div class="div15">
+                        <div class="div2">
                             <div class="div16 ">
                                 <div class="div17">
                                     <label for="">Izvođač: </label>
-                                    <input type="text"  name="izvodjac" class="izvodjac_i"/>
-                                </div>
+                                    <input type="text"  name="izvodjac" class="izvodjac_i"/> 
+                                </div><br>
                                 <div class="div18">
                                 <div class="div19">
                                     <label for="">Datum: </label>
                                     <input type="date"   name="datum" class="fdatum_i"/>
                                 </div>
-                                </div>
+                                </div><br>
                                 
                                 <div class="div20">
                                     <label for="mesto">Mesto: </label>
                                     <input type="mesto"  name="mesto" class="mesto_i"/>
-                                </div>
+                                </div><br>
                                 <div class="div21">
                                 <label for="">Volonter: </label>
                                     <input type="text"  name="volonter" class="volonter_i"/>
-                                </div>
+                                </div><br>
                                 <div class="div22">
                                     <button id="btnUnesi" type="submit" class="unesi"
                                     >Unesi novi koncert</button>
@@ -132,40 +133,42 @@
 
  </div>
 
-<div class="div23"  role="dialog">
-    <div class="div24">
+
+
+ <div class="modal" id="azurirajModal" role="dialog"  style=" background-color: #FFDAB9">
+    <div class="div24" style=" background-color: #FFDAB9">
 
      
-        <div class="div25">
-            <div class="div26">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content" style=" background-color:#FFDAB9">
+            <div class="div26" style=" background-color:#FFDAB9">
+                <button type="button" class="zatvori" data-dismiss="modal">&times;</button>
             </div>
-            <div class="div27">
+            <div class="div27" >
                 <div class="div28">
                     <form action="#" method="post" id="azuriranje">
                         <h3 >Ažuriraj koncert</h3>
-                        <div class="div29">
+                        <div class="div2">
                             <div class="div30">
                                 <div class="div31">
                                     <input id="idPrijava" type="text" name="idPrijava" class="frm"
                                            placeholder="idPrijave *" value="" readonly />
-                                </div>
+                                </div><br>
                                 <div class="div32">
                                     <input id="izvodjac" type="text" name="izvodjac" class="frm"
                                            placeholder="Izvođac *" value=""/>
-                                </div>
+                                </div><br>
                                 <div class="div35">
                                     <input id="datum" type="date" name="datum" class="frm"
                                            placeholder="Datum *" value=""/>
-                                </div>
+                                </div><br>
                                 <div class="div33">
                                     <input id="mesto" type="text" name="mesto" class="frm"
                                            placeholder="Mesto *" value=""/>
-                                </div>
+                                </div><br>
                                 <div class="div34">
                                     <input id="idVolonter" type="text" name="idVolonter" class="frm"
                                            placeholder="idVolonter *" value=""/>
-                                </div>
+                                </div><br>
                                 
                                 <div class="div36">
                                     <button id="btnIzmeni" type="submit" class="izmeni"
@@ -179,7 +182,7 @@
                 </div>
             </div>
             <div class="div37">
-                <button type="button" class="kraj" data-dismiss="modal">Kraj</button>
+                <button type="button" class="kraj " data-dismiss="modal">Kraj</button>
             </div>
         </div>
 
