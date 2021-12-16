@@ -2,6 +2,7 @@
     font-family: cursive;
     color: rgb(77, 35, 5);
     background-color: #FFDAB9;
+    
    
 }
 
@@ -18,9 +19,12 @@ h1{
     
     float: center;
     border: 3px white; 
+    border-style: inset;
+    border-width: 5px;
+    border-color: rgb(43, 19, 3);
     
-  
 }
+
 
 .div3{
   
@@ -122,20 +126,20 @@ div.modal-content {
 
 
 #azurirajModal{
-   
+   border-radius: 10px;
     margin-left: 510px;
     margin-top: 180px;
    width: 450px;
-   height: 413px;
+   height: 407px;
    
 }
 
 #volontirajModal{
     margin-left: 490px;
-    margin-top: 240px;
+    margin-top: 220px;
    width: 500px;
-   height: 333px;
-
+   height: 328px;
+   border-radius: 10px;
 }
 .div{
     height: 70px;
@@ -150,7 +154,12 @@ div.modal-content {
     
 
 }
-tr
+
+
+.zatvori{
+     margin-top: 5px;
+     margin-left: 5px;
+}
 table,tr,td{
     background-color: white;
 }
