@@ -1,0 +1,111 @@
+*{
+    font-family:cursive;
+    color: rgb(77, 35, 5);
+    align-self: center;
+    align-content: center;
+   
+   
+}
+
+body{
+    
+    background-color:	white;
+     background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    align-self: center;
+    background-attachment: fixed; 
+}
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    margin-left: 480px;  
+    font-size: 1cm;
+    align-self: center;
+}
+p{
+    background-color: rgb(204, 164, 104);
+    margin-top: 10px;
+    margin-left: 275px;
+    margin-right: 240px;  
+    border-radius: 10px;
+    align-self: center;
+}
+form {
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 500px;
+   
+}
+
+
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+  
+    align-self: center;
+    border: 3px solid rgb(77, 35, 5);
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+
+img{
+    margin-left: 450px;
+    align-self: center;
+    border-radius: 10px;
+    border-style: dotted;
+    align-self: center;
+    
+}
+
+a{
+    align-self: center;
+    font-style: italic;
+    
+    margin-left: 650px;
+    align-self: center;
+    
+}
+
+span{
+    display: inline-block;
+    font-weight: bolder;
+    animation: mover 6s linear infinite;
+    font-size: 20px;
+    align-self: center;
+}
+@keyframes mover {
+    0%{
+        text-shadow:0 0 30px rgba(0,0,0,0) ;
+        
+    }
+    50%{
+        text-shadow:0 0 30px rgba(0,0,0,0.30) ;
+        transform: translateY(25px);
+    }
+    100%{
+        text-shadow:0 0 30px rgba(0,0,0,0) ;
+    }
+}
+
+button{
+    background-color: rgb(223, 11, 82);
+    color: rgb(43, 19, 3);
+    align-self: center;
+    margin-left: 230px;
+    border-radius: 15px;
+    width: 100px;
+    height: 50px;
+
+    
+}
+
+.vdiv{
+    border-style: inset;
+    border-width: 5px;
+    border-color: rgb(43, 19, 3);
+    background-color: #FFDAB9;
+    border-radius: 10px;
+    
+}
