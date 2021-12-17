@@ -39,7 +39,7 @@ if ($data->num_rows == 0) {
 <div class="div1" ><h1>Stranica za zakazivanje koncerata</h1></div> <br><br><br>
 <p id="usloviv"><i>Unošenjem ispravnih vrednosti u datu tabelu i podnošenjem prijave, obavezujete se da volontirate prilikom 
 pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprotnom vaša prijava se neće obrađivati.Veliko vam hvala!</i></p><br><br><br><br>
-<div class="diva2"  >
+<div class="row"  >
     <div class="div3">
         <button id="vidi"  class="btn_vidi" 
         s> Pregledaj zakazane koncerte</button>
@@ -50,16 +50,19 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
 
     </div><br>
     <div class="div5"> 
-        <button id="nadji" class="btn_nadji"
-                > Pronađi željeni koncert</button>
-        <input type="text" id="ulaz" onkeyup="nadji()" placeholder="Pronadji traženi koncert po datumu" hidden>
+ 
+            <button id="nadji" class="btn_pretraga" > Pretraži koncert</button><br>
+            <input type="text" id="ulaz" onkeyup="nadji()" placeholder="Pretraži koncerte po izvođaču" >
+        
     </div><br>
 </div>
 
-<div  class="divx" >
+
+
+<div  class="divp" >
 
     <div class="div6" >
-        <table id="table" class="tabela_koncerata" border="3" style=" background-color:rgb(230, 105, 105)">
+        <table id="tabela" class="tabela_koncerata" border="3" style=" background-color:rgb(230, 105, 105)">
             <thead class ="zaglavlje">
             <tr >
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Izvođač</th>
@@ -91,7 +94,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 ?>
             </tbody>
         </table>
-        <div class="div7" >
+        <div class="row" >
             <div class="div8" >
                 <button id="azuriraj" type="button" class="btn_azuriraj" data-toggle="modal" data-target="#azurirajModal">AŽURIRAJ</button>
                 
@@ -121,32 +124,32 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
             </div>
             <div class="div15">
                 <div class="fprijava">
-                    <form action="#" method="post" id="dodajFormu">
-                        <h3  >Volontiraj</h3>
-                        <div class="div2">
+                    <form action="#" method="post" id="dodajForm">
+                        <h3>Volontiraj</h3>
+                        <div class="row">
                             <div class="div16 ">
-                                <div class="div17">
+                                <div class="fgroup">
                                     <label for="">Izvođač: </label>
-                                    <input type="text"  name="izvodjac" class="izvodjac_i"/> 
+                                    <input type="text"  name="izvodjac" class="form-control"/> 
                                 </div><br>
                                 <div class="div18">
-                                <div class="div19">
+                                <div class="fgroup">
                                     <label for="">Datum: </label>
-                                    <input type="date"   name="datum" class="fdatum_i"/>
+                                    <input type="date"   name="datum" class="form-control"/>
                                 </div>
                                 </div><br>
                                 
-                                <div class="div20">
+                                <div class="fgroup">
                                     <label for="mesto">Mesto: </label>
-                                    <input type="mesto"  name="mesto" class="mesto_i"/>
+                                    <input type="mesto"  name="mesto" class="form-control"/>
                                 </div><br>
-                                <div class="div21">
+                                <div class="fgroup">
                                 <label for="">Volonter: </label>
-                                    <input type="text"  name="volonter" class="volonter_i"/>
+                                    <input type="text"  name="volonter" class="form-control"/>
                                 </div><br>
-                                <div class="div22">
-                                    <button id="btnUnesi" type="submit" class="unesi"
-                                    >Unesi novi koncert</button>
+                                
+                                <div class="fgroup">
+                                <button id="btnUnesi" type="submit" class="btnUnesi">Unesi</button>
                                 </div>
                             </div>
                     </div>
@@ -175,7 +178,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 <div class="div28">
                     <form action="#" method="post" id="azuriranje">
                         <h3 >Ažuriraj koncert</h3>
-                        <div class="div2">
+                        <div class="row">
                             <div class="div30">
                                 <div class="div31">
                                     <input id="idPrijava" type="text" name="idPrijava" class="frm"
@@ -226,6 +229,60 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
 <script src="js/main.js"></script>
 
 
+
+
+
+
+<script>
+        function sortirajTabelu() {
+            var table, rows, s, i, a, b, shouldS;
+            table = document.getElementById("tabela");
+            s = true;
+
+            while (s) {
+                s = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldS = false;
+                    a = rows[i].getElementsByTagName("td")[1];
+                    b = rows[i + 1].getElementsByTagName("td")[1];
+                    if (a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase()) {
+                        shouldS = true;
+                        break;
+                    }
+                }
+                if (shouldS) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    s = true;
+                }
+            }
+        }
+
+        function nadji() {
+            var unos, filter, table, tr, td, i, txtValue;
+            unos = document.getElementById("ulaz");
+            filter = unos.value.toUpperCase();
+            table = document.getElementById("tabela");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+       
+
+
+    
+
+
+    </script>
 
 </body>
 </html>

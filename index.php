@@ -1,5 +1,41 @@
 
+<?php
 
+require "DataBaseBroker.php";
+require "modeli/volonter.php";
+
+session_start();
+if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])){
+    $vname = $_POST['username'];
+    $vemail = $_POST['email'];
+    $vpassword = $_POST['password'];
+
+
+   
+    $user = new Volonter(1, $vname,$vemail, $vpassword);
+   
+    $odg = Volonter::prijavaVolontera($user, $conn); 
+
+    if($odg->num_rows==1){
+        echo  `
+        <script>
+        console.log( "Uspešna prijava volontera na sistem!");
+        </script>
+        `;
+        $_SESSION['volonter_id'] = $user->idVolonter;
+        header('Location: pocetna.php');
+        exit();
+    }else{
+        echo `
+        <script>
+        console.log( "Neuspešna prijava volontera na sistem!");
+        </script>
+        `;
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,40 +83,3 @@ novčanih sredstava onima kojima su ta sredstva najviše potrebna. Hvala!</p>
 </html>
 
 
-<?php
-
-require "DataBaseBroker.php";
-require "modeli/volonter.php";
-
-session_start();
-if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])){
-    $vname = $_POST['username'];
-    $vemail = $_POST['email'];
-    $vpassword = $_POST['password'];
-
-
-   
-    $user = new Volonter(1, $vname,$vemail, $vpassword);
-   
-    $odg = Volonter::prijavaVolontera($user, $conn); 
-
-    if($odg->num_rows==1){
-        echo  `
-        <script>
-        console.log( "Uspešna prijava volontera na sistem!");
-        </script>
-        `;
-        $_SESSION['volonter_id'] = $user->idVolonter;
-        header('Location: pocetna.php');
-        exit();
-    }else{
-        echo `
-        <script>
-        console.log( "Neuspešna prijava volontera na sistem!");
-        </script>
-        `;
-    }
-
-}
-
-?>
