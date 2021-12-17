@@ -14,8 +14,8 @@
 
 
 <div class="div1" ><h1>Stranica za zakazivanje koncerata</h1></div> <br><br><br>
-<p id="usloviv"><i>Upisivanjem vrednosti <b>TRUE</b> u kolonu uslovi, date tabele, obavezujete se da volontirate prilikom 
-pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom vaša prijava se neće obrađivati.Veliko HVALA na saradnji ! </i></p><br>
+<p id="usloviv"><i>Unošenjem ispravnih vrednosti u datu tabelu i podnošenjem prijave, obavezujete se da volontirate prilikom 
+pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom vaša prijava se neće obrađivati.Veliko vam hvala!</i></p><br>
 <div class="diva2"  >
     <div class="div3">
         <button id="vidi"  class="btn_vidi" 
