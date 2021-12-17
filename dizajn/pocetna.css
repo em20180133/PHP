@@ -116,8 +116,8 @@ button{
 } 
 
 
-div.modal-content {
-    background-image: url("../img/slika.jpg");
+div.modal-content{
+    
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed; 
@@ -140,6 +140,7 @@ div.modal-content {
    width: 500px;
    height: 328px;
    border-radius: 10px;
+   
   
 }
 .div{

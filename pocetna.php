@@ -92,7 +92,7 @@ pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom v
             <div class="div14">
                 <button type="button" class="zatvori" data-dismiss="modal">&times;</button>
             </div>
-            <div class="div14">
+            <div class="div15">
                 <div class="fprijava">
                     <form action="#" method="post" id="dodajFormu">
                         <h3  >Volontiraj</h3>
