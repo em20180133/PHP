@@ -7,6 +7,7 @@
 }
 
 h1{
+    
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 10px;
     margin-left: 460px;  
@@ -41,6 +42,7 @@ h1{
     align-content: center;
     margin-left: 600px;  
 }
+
 
 body{
     background-color: #FFDAB9;
@@ -151,11 +153,10 @@ div.modal-content{
 
 #table{
     border-style: double;
-    border-radius: 15px;
+   
     border-color:rgb(223, 11, 82) ;
     text-align: center;
-    
-
+   
 }
 
 
@@ -163,14 +164,19 @@ div.modal-content{
      margin-top: 5px;
      margin-left: 5px;
 }
+table{
+   margin-left: 400px;
+}
 table,tr,td{
+   width: 650px;
     background-color: white;
 }
+
 table,tr,th{
-   
-background-color: white;
+    
+background-color: rgb(230, 105, 105);
 text-align: center;
 }
 .oznaci{
-background-color: white;
+background-color:white;
 }

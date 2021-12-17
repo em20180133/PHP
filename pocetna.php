@@ -1,3 +1,26 @@
+<?php
+
+require "DataBaseBroker.php";
+require "modeli/prijavazavolontiranje.php";
+
+session_start();
+if (!isset($_SESSION['volonter_id'])) {
+    header('Location: index.php');
+    exit();
+}
+$data = VPrijava::prikaziSveKoncerte($conn);
+if (!$data) {
+    echo "Neuspesno preuzimanje podataka!";
+    die();
+}
+if ($data->num_rows == 0) {
+    echo "Prazna tabela!";
+    die();
+} else {
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,22 +59,23 @@ pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom v
 <div  class="divx" >
 
     <div class="div6" >
-        <table id="table" class="tabela_koncerata" border="3" style=" background-color: white">
+        <table id="table" class="tabela_koncerata" border="3" style=" background-color:rgb(230, 105, 105)">
             <thead class ="zaglavlje">
             <tr >
-                <th scope="kolona" style="background-color:white " >Izvođač</th>
-                <th scope="kolona" style="background-color:white " >Datum</th>    
-                <th scope="kolona" style="background-color:white " >Mesto</th>
-                <th scope="kolona" style="background-color:white  " >Volonter </th>
+                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Izvođač</th>
+                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Datum</th>    
+                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Mesto</th>
+                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Volonter </th>
             </tr>
             </thead>
             <tbody>
-            
+            <?php
+                    while ($red = $data->fetch_array()) :
+                    ?>
                 <tr >
                     <td><?php echo $red["izvodjac"] ?></td>
                     <td><?php echo $red["datum"] ?></td>
                     <td><?php echo $red["mesto"] ?></td>
-                    
                     <td><?php echo $red["idVolonter"] ?></td>
                     <td >
                         <label class="oznaci">
@@ -61,7 +85,10 @@ pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom v
                     </td>
 
                 </tr>
-             
+                <?php
+                    endwhile;
+                } 
+                ?>
             </tbody>
         </table>
         <div class="div7" >
@@ -202,3 +229,4 @@ pripreme i realizacije humanitarnih koncerata, bez ikakve naknade. U suprotnom v
 
 </body>
 </html>
+

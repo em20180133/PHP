@@ -59,7 +59,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
     $vpassword = $_POST['password'];
 
 
-    // $conn = new mysqli() ;
+   
     $user = new Volonter(1, $vname,$vemail, $vpassword);
    
     $odg = Volonter::prijavaVolontera($user, $conn); 
@@ -70,7 +70,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password
         console.log( "Uspešna prijava volontera na sistem!");
         </script>
         `;
-        $_SESSION['volonter_id'] = $user->id;
+        $_SESSION['volonter_id'] = $user->idVolonter;
         header('Location: pocetna.php');
         exit();
     }else{
