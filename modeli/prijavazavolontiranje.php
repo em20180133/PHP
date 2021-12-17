@@ -19,5 +19,40 @@ public static function prikaziSveKoncerte(mysqli $conn)
         return $conn->query($query);
     }
 
+
+
+ static function getById($idPrijava, mysqli $conn){
+  
+        $query = "SELECT * FROM prijavazavolontiranje WHERE idPrijava=$idPrijava";
+
+        $myObj = array();
+        if($msqlObj = $conn->query($query)){
+            while($red = $msqlObj->fetch_array(1)){
+                $myObj[]= $red;
+            }
+        }
+
+        return $myObj;
+
+    }
+
+    public function delete(mysqli $conn)
+    {
+        $query = "DELETE FROM prijavazavolontiranje WHERE idPrijava=$this->idPrijava";
+        return $conn->query($query);
+    }
+
+    public function update($idPrijava, mysqli $conn)
+    {
+        $query = "UPDATE prijave set izvodjac = $this->izvodjac,datum = $this->datum,mesto = $this->mesto,idVolonter = $this->idVolonter WHERE idPrijava=$idPrijava";
+        return $conn->query($query);
+    }
+
+    public static function add(VPrijava $vprijava, mysqli $conn)
+    {
+        $query = "INSERT INTO prijavazavolontiranje(izvodjac, datum, mesto, idVolonter) VALUES('$vprijava->izvodjac','$vprijava->datum','$vprijava->mesto','$vprijava->idVolonter')";
+        return $conn->query($query);
+    }
+
 }
 ?>
