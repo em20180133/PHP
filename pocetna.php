@@ -44,11 +44,14 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
         <button id="vidi"  class="btn_vidi" 
         s> Pregledaj zakazane koncerte</button>
     </div><br>
+    
     <div class="div4">
-        <button id="prijavise" type="button" class="btn_prijavise"
-        data-toggle="modal" data-target="#volontirajModal"  > Volontiraj</button>
+            <button id="prijavise" type="button" class="btn_prijavise" data-toggle="modal" data-target="#volontirajModal">Volontiraj</button>
 
-    </div><br>
+        </div>
+    
+    
+    <br>
     <div class="div5"> 
  
             <button id="nadji" class="btn_pretraga" > Pretraži koncert</button><br>
@@ -82,8 +85,8 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                     <td><?php echo $red["idVolonter"] ?></td>
                     <td >
                         <label class="oznaci">
-                            <input type="radio" name="checked-donut" value=<?php echo $red["idPrijava"] ?>>
-                            <span class="check"></span>
+                        <input type="radio" name="cekiranje" value=<?php echo $red["idPrijava"] ?>>
+                                    <span class="checkmark"></span>
                         </label>
                     </td>
 
@@ -100,10 +103,13 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 
             </div>
 
-            <div class="div9" >
-                <button id="ukloni" class="btn_ukloni" >UKLONI</button>
-            </div>
-
+            
+            <div class="col-md-12" >
+                    <button id="btn-obrisi" type="button" formmethod="post" class="btn btn-danger" style="
+    
+    background-color: rgb(223, 11, 82);
+    border-radius: 10px">UKLONI</button>
+                </div>
             <div class="div10"  >
                     <button id="uredi" class="btn_uredi" onclick="sortirajTabelu()">SORTIRAJ</button>
                 </div>
@@ -128,29 +134,29 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                         <h3>Volontiraj</h3>
                         <div class="row">
                             <div class="div16 ">
-                                <div class="fgroup">
+                                <div class="form-group">
                                     <label for="">Izvođač: </label>
                                     <input type="text"  name="izvodjac" class="form-control"/> 
                                 </div><br>
                                 <div class="div18">
-                                <div class="fgroup">
+                                <div class="form-group">
                                     <label for="">Datum: </label>
                                     <input type="date"   name="datum" class="form-control"/>
                                 </div>
                                 </div><br>
                                 
-                                <div class="fgroup">
+                                <div class="form-group">
                                     <label for="mesto">Mesto: </label>
                                     <input type="mesto"  name="mesto" class="form-control"/>
                                 </div><br>
-                                <div class="fgroup">
+                                <div class="form-group">
                                 <label for="">Volonter: </label>
                                     <input type="text"  name="volonter" class="form-control"/>
                                 </div><br>
                                 
-                                <div class="fgroup">
-                                <button id="btnUnesi" type="submit" class="btnUnesi">Unesi</button>
-                                </div>
+                                <div class="form-group">
+                                        <button id="btnDodaj" type="submit" class="btn btn-success btn-block">Zakazi</button>
+                                    </div>
                             </div>
                     </div>
                     </form>
@@ -224,16 +230,18 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
 </div>
 
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  
+    <script src="js/main.js"></script>
 
 
 
 
 <script>
+    //sortiramo po datumu
         function sortirajTabelu() {
             var table, rows, s, i, a, b, shouldS;
             table = document.getElementById("tabela");
@@ -257,7 +265,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 }
             }
         }
-
+//pretrazivanje po izvodjacu
         function nadji() {
             var unos, filter, table, tr, td, i, txtValue;
             unos = document.getElementById("ulaz");

@@ -19,10 +19,7 @@ public static function prikaziSveKoncerte(mysqli $conn)
         return $conn->query($query);
     }
 
-
-
- static function getById($idPrijava, mysqli $conn){
-  
+    public static function getById($idPrijava, mysqli $conn){
         $query = "SELECT * FROM prijavazavolontiranje WHERE idPrijava=$idPrijava";
 
         $myObj = array();
@@ -36,21 +33,29 @@ public static function prikaziSveKoncerte(mysqli $conn)
 
     }
 
-    public function delete(mysqli $conn)
+    
+
+    public function deleteById(mysqli $conn)
     {
         $query = "DELETE FROM prijavazavolontiranje WHERE idPrijava=$this->idPrijava";
         return $conn->query($query);
     }
 
+    
     public function update($idPrijava, mysqli $conn)
     {
-        $query = "UPDATE prijave set izvodjac = $this->izvodjac,datum = $this->datum,mesto = $this->mesto,idVolonter = $this->idVolonter WHERE idPrijava=$idPrijava";
+        $query = "UPDATE prijavazavolontiranje set izvodjac = $this->izvodjac,datum = $this->datum,mesto = $this->mesto,idVolonter = $this->idVolonter WHERE idPrijava=$idPrijava";
         return $conn->query($query);
     }
 
-    public static function add(VPrijava $prijava, mysqli $conn) {
-        $query="INSERT INTO prijavazavolontiranje (izvodjac, datum, mesto, idVolonter) VALUES ('$prijava->izvodjac','$prijava->datum','$prijava->mesto', $prijava->idVolonter)";
+    
+    public static function add(VPrijava $prijava, mysqli $conn)
+    {
+        $query = "INSERT INTO prijavazavolontiranje(izvodjac, datum, mesto, idVolonter) VALUES('$izvodjac->izvodjac','$datum->datum','$mesto->mesto',$idVolonter->volonter)";
         return $conn->query($query);
     }
 }
+
+
+
 ?>
