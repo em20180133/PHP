@@ -71,7 +71,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Izvođač</th>
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Datum</th>    
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Mesto</th>
-                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Volonter </th>
+               
             </tr>
             </thead>
             <tbody>
@@ -105,10 +105,8 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
 
             
             <div class="col-md-12" >
-                    <button id="btn-obrisi" type="button" formmethod="post" class="btn btn-danger" style="
-    
-    background-color: rgb(223, 11, 82);
-    border-radius: 10px">UKLONI</button>
+                    <button id="btn-obrisi" type="button" formmethod="post" class="btn btn-danger" 
+   >UKLONI</button>
                 </div>
             <div class="div10"  >
                     <button id="uredi" class="btn_uredi" onclick="sortirajTabelu()">SORTIRAJ</button>
@@ -131,7 +129,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
             <div class="div15">
                 <div class="fprijava">
                     <form action="#" method="post" id="dodajForm">
-                        <h3>Volontiraj</h3>
+                        <h3>Zakazi</h3>
                         <div class="row">
                             <div class="div16 ">
                                 <div class="form-group">
@@ -147,11 +145,11 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                                 
                                 <div class="form-group">
                                     <label for="mesto">Mesto: </label>
-                                    <input type="mesto"  name="mesto" class="form-control"/>
+                                    <input type="text"  name="mesto" class="form-control"/>
                                 </div><br>
                                 <div class="form-group">
                                 <label for="">Volonter: </label>
-                                    <input type="text"  name="volonter" class="form-control"/>
+                                    <input type="text"  name="idVolonter" class="form-control"/>
                                 </div><br>
                                 
                                 <div class="form-group">

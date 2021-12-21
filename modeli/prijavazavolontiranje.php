@@ -51,11 +51,11 @@ public static function prikaziSveKoncerte(mysqli $conn)
     
     public static function add(VPrijava $prijava, mysqli $conn)
     {
-        $query = "INSERT INTO prijavazavolontiranje(izvodjac, datum, mesto, idVolonter) VALUES('$izvodjac->izvodjac','$datum->datum','$mesto->mesto',$idVolonter->volonter)";
+        $query = "INSERT INTO prijavazavolontiranje (izvodjac, datum, mesto, idVolonter) VALUES ('$prijava->izvodjac','$prijava->datum','$prijava->mesto',$prijava->idVolonter)";
         return $conn->query($query);
     }
 }
-
+ 
 
 
 ?>
