@@ -71,7 +71,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Izvođač</th>
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Datum</th>    
                 <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Mesto</th>
-               
+                <th scope="kolona" style="background-color:rgb(230, 105, 105) " >Volonter</th>
             </tr>
             </thead>
             <tbody>
@@ -99,7 +99,7 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
         </table>
         <div class="row" >
             <div class="div8" >
-                <button id="azuriraj" type="button" class="btn_azuriraj" data-toggle="modal" data-target="#azurirajModal">AŽURIRAJ</button>
+                <button id="azuriraj" class="btn_azuriraj" data-toggle="modal" data-target="#azurirajModal">AŽURIRAJ</button>
                 
             </div>
 
@@ -186,19 +186,19 @@ pripreme i realizacije humanitarnih koncerata, <br> bez ikakve naknade. U suprot
                             <div class="div30">
                                 <div class="div31">
                                     <input id="idPrijava" type="text" name="idPrijava" class="frm"
-                                           placeholder="idPrijave *" value="" readonly />
+                                           placeholder="idPrijava *" value="" readonly />
                                 </div><br>
                                 <div class="div32">
                                     <input id="izvodjac" type="text" name="izvodjac" class="frm"
-                                           placeholder="Izvođac *" value=""/>
+                                           placeholder="izvodjac *" value=""/>
                                 </div><br>
                                 <div class="div35">
                                     <input id="datum" type="date" name="datum" class="frm"
-                                           placeholder="Datum *" value=""/>
+                                           placeholder="datum *" value=""/>
                                 </div><br>
                                 <div class="div33">
                                     <input id="mesto" type="text" name="mesto" class="frm"
-                                           placeholder="Mesto *" value=""/>
+                                           placeholder="mesto *" value=""/>
                                 </div><br>
                                 <div class="div34">
                                     <input id="idVolonter" type="text" name="idVolonter" class="frm"

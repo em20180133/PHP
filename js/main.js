@@ -77,19 +77,21 @@ $('#vidi').submit(function () {
 
 
 
-$('#azuriraj').click(function () {
+
+$('#azuriraj').click(function (event) {
+    event.preventDefault();
     const checked = $('input[name=cekiranje]:checked');
- 
+
     request = $.ajax({
         url: 'handler/get.php',
         type: 'post',
         data: {'idPrijava': checked.val()},
-        dataType: 'json'
+        dataType : "json"
     });
 
 
-    request.done(function (response, textStatus, jqXHR) {
-        console.log('Popunjena');
+    request.done(function (response,textStatus,jqXHR) {
+        console.log('Popunjena forma');
         $('#izvodjac').val(response[0]['izvodjac']);
         console.log(response[0]['izvodjac']);
 
@@ -107,40 +109,47 @@ $('#azuriraj').click(function () {
         console.log(response);
     });
 
-   request.fail(function (jqXHR, textStatus, errorThrown) {
-       console.error('The following error occurred: ' + textStatus, errorThrown);
+   request.fail(function (jqXHR,textStatus, errorThrown) {
+       console.error('Error: ' + textStatus, errorThrown);
    });
 
+   
 });
-
-
-$('#azuriranje').submit(function () {
+$('#azuriranje').submit(function (event) {
     event.preventDefault();
-    console.log("Izmene");
+  
+    console.log("Nove vrednosti");
     const $form = $(this);
     const $inputs = $form.find('input, select, button, textarea');
     const serializedData = $form.serialize();
     console.log(serializedData);
     $inputs.prop('disabled', true);
 
-  
+    
+    request = $.ajax({
+        url: 'handler/update.php',
+        type: 'post',
+        data: serializedData
+      
+    });
 
-    request.done(function (response, textStatus, jqXHR) {
+    request.done(function (response,textStatus,jqXHR) {
 
 
-        if (response === 'Success') {
-            console.log('Koncert je izmenjen');
+        if (response == "Success") {
+            console.log('Koncert je azuriran');
             location.reload(true);
-            
+            $('#azuriranje').reset;
         }
-        else console.log('Koncert nije izmenjen ' + response);
+        else console.log('Koncert nije azuriran ' + response);
         console.log(response);
     });
 
-    request.fail(function (jqXHR, textStatus, errorThrown) {
-        console.error('The following error occurred: ' + textStatus, errorThrown);
+    request.fail(function (jqXHR,textStatus, errorThrown) {
+        console.error('Error: ' + textStatus, errorThrown);
     });
 
 
     
+    $('#azurirajModal').modal('hide');
 });

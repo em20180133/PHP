@@ -42,9 +42,8 @@ public static function prikaziSveKoncerte(mysqli $conn)
     }
 
     
-    public function update($idPrijava, mysqli $conn)
-    {
-        $query = "UPDATE prijavazavolontiranje set izvodjac = $this->izvodjac,datum = $this->datum,mesto = $this->mesto,idVolonter = $this->idVolonter WHERE idPrijava=$idPrijava";
+    public static function update(VPrijava $novaPrijava, mysqli $conn) {
+        $query="UPDATE prijavazavolontiranje set izvodjac='$novaPrijava->izvodjac', datum='$novaPrijava->datum', mesto='$novaPrijava->mesto', idVolonter='$novaPrijava->idVolonter' WHERE idPrijava='$novaPrijava->idPrijava'";
         return $conn->query($query);
     }
 
